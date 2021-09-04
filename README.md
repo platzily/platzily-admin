@@ -1,2 +1,6 @@
 # platzily-admin
-Repo for Admin Module for the project Platzily
+
+
+Repository for Admin Module for the project Platzily.
+The intended module have the porpouse of manage the politics of the campaings, links status,
+Tracking the performance of the link campaings
