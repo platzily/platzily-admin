@@ -39,8 +39,6 @@ What is the expected outcome?
 
 - As a team and students we want challenge ourselves in learning process of a entirely new programing lenguage.
 
-- Is the favorite programing lenguage of our CEO.
-
 ## Next.js ▬ FRONT
 
 - Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering.
@@ -48,8 +46,6 @@ What is the expected outcome?
 - TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
 
 - Give a knlowdege base of the architecture of the strcuture to build on. Allows to fast development.
-
-- Also is the favorite for the frontend of our CEO.
 
 ## Architecture
 
