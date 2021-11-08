@@ -1,0 +1,11 @@
+{
+  "name": "@admin/iam-service",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
