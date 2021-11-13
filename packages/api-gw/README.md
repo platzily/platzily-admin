@@ -1,11 +1,11 @@
-# `@admin/api-gw`
+# `@platzily-admin/api-gw`
 
 > TODO: description
 
 ## Usage
 
 ```
-const linksModule = require('@platzily/links-module');
+const apiGw = require('@platzily-admin/api-gw');
 
 // TODO: DEMONSTRATE API
-```
+``

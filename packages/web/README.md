@@ -1,5 +1,11 @@
-# `@admin/web`
+# `@platzily-admin/web`
 
-Repository to deploy the frontend
+> TODO: description
 
 ## Usage
+
+```
+const web = require('@platzily-admin/web');
+
+// TODO: DEMONSTRATE API
+```
