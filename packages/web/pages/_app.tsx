@@ -1,10 +1,15 @@
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app'
+import { SessionProvider } from "next-auth/react"
 
 import "../normalize.css"
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for

@@ -13,6 +13,8 @@ lib-cov
 bin/*
 pkg/*
 !.gitkeep
+*.env
+
 
 # Coverage directory used by tools like istanbul
 coverage
