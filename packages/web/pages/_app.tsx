@@ -1,10 +1,16 @@
 // import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app'
+import type { AppProps /*, AppContext */ } from "next/app";
+import Layout from "../components/Layout";
 
-import "../normalize.css"
+import "../normalize.css";
+import "../components/styles/styles.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -19,4 +25,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default MyApp
+export default MyApp;
