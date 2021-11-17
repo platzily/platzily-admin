@@ -1,13 +1,20 @@
 // import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app'
-import { SessionProvider } from "next-auth/react"
 
-import "../normalize.css"
+import type { AppProps /*, AppContext */ } from "next/app";
+import Layout from "../components/Layout";
+import { SessionProvider } from "next-auth/react";
+
+
+import "../normalize.css";
+import "../components/styles/styles.css";
+
 
 function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SessionProvider>
   )
 }
@@ -24,4 +31,5 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default MyApp
+
+export default MyApp;
