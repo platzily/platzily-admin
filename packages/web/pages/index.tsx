@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import Singin from './components/Singin';
+import Singin from '../components/Singin';
 
 function HomePage() {
   return (
