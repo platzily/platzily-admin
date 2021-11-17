@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "private": true,
-  "devDependencies": {
-    "lerna": "^4.0.0"
+  "scripts": {
+    "dev": "yarn workspace @platzily-admin/web dev"
   }
 }
