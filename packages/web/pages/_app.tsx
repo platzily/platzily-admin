@@ -1,16 +1,22 @@
 // import App from "next/app";
+
 import type { AppProps /*, AppContext */ } from "next/app";
 import Layout from "../components/Layout";
+import { SessionProvider } from "next-auth/react";
+
 
 import "../normalize.css";
 import "../components/styles/styles.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+
+function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+    <SessionProvider session={session}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -24,5 +30,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 //   return { ...appProps }
 // }
+
 
 export default MyApp;
