@@ -1,0 +1,22 @@
+{
+  "name": "@admin/db-connections",
+  "version": "0.0.0",
+  "description": "Users of admin",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.6.0",
+    "mongoose": "^6.0.12",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.9.0"
+  },
+  "scripts": {
+    "init": "docker-compose up -d",
+    "dev": "tsc && node ./dist/index.js",
+    "stop": "docker-compose down"
+  },
+  "devDependencies": {
+    "typeorm": "^0.2.40"
+  }
+}
