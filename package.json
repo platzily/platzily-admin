@@ -5,6 +5,6 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "yarn workspace @platzily-admin/web dev"
+    "dev": "yarn workspace @platzily-admin/web start"
   }
 }

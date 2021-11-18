@@ -12,7 +12,7 @@
     "sequelize": "^6.9.0"
   },
   "scripts": {
-    "init": "docker-compose up -d",
+    "start": "docker-compose up -d",
     "dev": "tsc && node ./dist/index.js",
     "stop": "docker-compose down"
   },

@@ -21,7 +21,8 @@
     "url": "git+https://github.com/platzily/platzily-admin.git"
   },
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.ts",
+    "start": "tsc && node ./dist/api-gw/src/index.js"
   },
   "bugs": {
     "url": "https://github.com/platzily/platzily-admin/issues"
@@ -30,7 +31,7 @@
     "fastify": "^3.23.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
   }
 }
-
