@@ -2,21 +2,20 @@
 
 import type { AppProps /*, AppContext */ } from "next/app";
 import Layout from "../components/Layout";
-import { SessionProvider } from "next-auth/react";
-
+import { UserProvider } from "@auth0/nextjs-auth0";
 
 import "../normalize.css";
 import "../components/styles/styles.css";
 
-
-function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  const { user } = pageProps;
   return (
-    <SessionProvider session={session}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </SessionProvider>
-  )
+    <UserProvider user={user}>
+      {/* <Layout> */}
+      <Component {...pageProps} />
+      {/* </Layout> */}
+    </UserProvider>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -30,6 +29,5 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
 
 //   return { ...appProps }
 // }
-
 
 export default MyApp;

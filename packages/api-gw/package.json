@@ -27,10 +27,11 @@
     "url": "https://github.com/platzily/platzily-admin/issues"
   },
   "dependencies": {
-    "fastify": "^3.23.1"
+    "fastify": "^3.23.1",
+    "fastify-jwt": "^3.2.1",
+    "jwks-rsa": "^2.0.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
-
