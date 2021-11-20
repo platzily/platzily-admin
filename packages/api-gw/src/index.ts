@@ -1,16 +1,15 @@
-import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
-import { Server, IncomingMessage, ServerResponse } from 'http';
+import Fastify, { FastifyInstance } from 'fastify';
+import { MongoDb } from "../../service-db/src/index";
 
 const server: FastifyInstance = Fastify({})
 
-import { MongoConnection } from '../../db-connect-test/src/index';
-import { User } from "../../db-connect-test/src/User";
-
-const dbMongo = new MongoConnection('mongodb://localhost/test?retryWrites=true', [User]);
+import { User } from "../../service-users/src/entities/User";
 
 server.get('/users', async (req, res) => {
-  dbMongo.getConnection().then(async function (connect) {
-    const users = await connect.mongoManager.find(User);
+  MongoDb.getConnection().then(async function (connect) {
+    // console.log(connect);
+
+    const users = await connect.manager.find(User);
 
     res.send({
       statusCode: 200,

@@ -4,7 +4,14 @@
     "packages/*"
   ],
   "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
   "scripts": {
-    "dev": "yarn workspace @platzily-admin/web start"
+    "start:dbs": "docker-compose up -d",
+    "dev:front": "yarn workspace @platzily-admin/web dev",
+    "dev:back": "yarn workspace @platzily-admin/api-gw dev",
+    "dev": "yarn dev:front && yarn dev:back",
+    "stop:dbs": "docker-compose down"
   }
 }
