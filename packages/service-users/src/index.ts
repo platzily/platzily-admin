@@ -1,19 +1,13 @@
-import { MongoDb, PostgressDb } from "../../service-db/src/index";
-import { User } from "./entities/User";
-import { UserPost } from "./entities/UserPost";
+export { User } from "./entities/User";
+export { UserPost } from "./entities/UserPost";
 
-PostgressDb.getConnection().then(async function (connect) {
-  console.log('postgress :D');
-});
+// code example next will delete
+import { PostgressDb, MongoDb } from "service-db";
 
-MongoDb.getConnection().then(async function (connect) {
-  console.log('mongo :D');
-  const user = new User;
-  user.firstName = 'Diego';
-  user.lastName = 'Lozano';
+PostgressDb.getConnection().then(async function (connection) {
+  console.log(':D postgres');
+})
 
-  await connect.mongoManager.save(user);
-
-  const result = await connect.mongoManager.find(User);
-  console.log(result);
-});
+MongoDb.getConnection().then(async function (connection) {
+  console.log(':D Mongo');
+})

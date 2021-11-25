@@ -1,21 +1,12 @@
 import Fastify, { FastifyInstance } from 'fastify';
-import { MongoDb } from "../../service-db/src/index";
 
 const server: FastifyInstance = Fastify({})
 
-import { User } from "../../service-users/src/entities/User";
-
 server.get('/users', async (req, res) => {
-  MongoDb.getConnection().then(async function (connect) {
-    // console.log(connect);
-
-    const users = await connect.manager.find(User);
-
-    res.send({
-      statusCode: 200,
-      data: users,
-      message: 'Users list',
-    });
+  res.send({
+    statusCode: 200,
+    data: [],
+    message: 'Users list',
   });
 });
 
@@ -66,9 +57,6 @@ server.patch('/admin/users', async (req, res) => {
     message: 'users',
   });
 });
-
-
-
 
 import { startServe } from './server';
 
