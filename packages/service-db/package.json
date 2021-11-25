@@ -1,0 +1,35 @@
+{
+  "name": "service-db",
+  "version": "1.0.0",
+  "description": "Service dbs connects",
+  "keywords": [
+    "db",
+    "mongodb",
+    "postgressdb"
+  ],
+  "homepage": "https://github.com/platzily/platzily-admin#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platzily/platzily-admin.git"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/index.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/platzily/platzily-admin/issues"
+  },
+  "dependencies": {
+    "@jest/types": "^27.2.5",
+    "dotenv": "10.0.0",
+    "typeorm": "0.2.41"
+  }
+}
