@@ -29,15 +29,14 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
-  postgresdb:
-    image: postgres
+  mariadb:
+    image: mariadb
     restart: always
     ports:
-      - 5432:5432
+      - 3306:3306
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: test
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: test
 
   adminer:
     image: adminer

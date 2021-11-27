@@ -9,16 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.anonymus = exports.config = void 0;
-exports.config = {
-    verbose: true,
-};
-function anonymus() {
-    return __awaiter(this, void 0, void 0, function* () {
-        return {
-            verbose: true,
-        };
+exports.MariaConnection = void 0;
+const typeorm_1 = require("typeorm");
+const MariaConnection = ({ url }) => {
+    const connection = ({ entities }) => __awaiter(void 0, void 0, void 0, function* () {
+        return yield (0, typeorm_1.createConnection)({
+            type: "mysql",
+            url: url,
+            entities: entities
+        });
     });
-}
-exports.anonymus = anonymus;
-;
+    return Object.freeze({
+        makeConnection: ({ entities }) => {
+            return connection({ entities });
+        }
+    });
+};
+exports.MariaConnection = MariaConnection;
