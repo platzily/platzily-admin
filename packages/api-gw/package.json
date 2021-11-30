@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "fastify": "^3.23.1",
-    "fastify-jwt": "^3.2.1",
+    "fastify-auth0-verify": "^0.6.0",
+    "fastify-jwt": "^4.0.0",
     "jwks-rsa": "^2.0.5"
   },
   "devDependencies": {
