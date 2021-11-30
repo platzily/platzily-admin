@@ -1,0 +1,34 @@
+{
+  "name": "@platzily-admin/mariadb-connection-module",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Diego Cruz <dacruzt@outlook.com>",
+  "homepage": "https://github.com/platzily/platzily-admin#readme",
+  "license": "MIT",
+  "main": "lib/mariadb-connection-module.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platzily/platzily-admin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/platzily/platzily-admin/issues"
+  },
+  "dependencies": {
+    "knex": "^0.95.14",
+    "mysql": "^2.18.1",
+    "winston": "^3.3.3"
+  }
+}
