@@ -1,5 +1,5 @@
-import { User, userModel, listUserDTO } from "../dto/user";
-import { dbConnection } from "mariadb-connection-module";
+import { userModel } from "../dto/user";
+const dbConnection = require("@platzily-admin/mariadb-connection-module");
 
 export const modelUser = (): userModel => {
   return {
@@ -8,16 +8,5 @@ export const modelUser = (): userModel => {
 };
 
 async function getAll() {
-  let result: User = await dbConnection("users").returning([
-    "id",
-    "firstname",
-    "lastname",
-    "description",
-    "email",
-    "rol",
-    "image",
-    "is_active",
-    "reason",
-  ]);
-  return result;
+  return await dbConnection("users");
 }

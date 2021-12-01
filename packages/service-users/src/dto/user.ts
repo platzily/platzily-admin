@@ -11,7 +11,7 @@ export interface User {
 }
 
 export interface userModel {
-  getAll(changes: listUserDTO): Promise<User>;
+  getAll(): Promise<User[]>;
 }
 
 export interface listUserDTO
