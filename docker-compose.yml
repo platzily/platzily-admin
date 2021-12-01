@@ -27,16 +27,6 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
-  postgresdb:
-    image: postgres
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: test
-
   maria-db:
     image: mariadb
     container_name: maria_db
@@ -50,6 +40,7 @@ services:
       - "3306:3306"
     volumes:
       - ./data:/var/lib/mysql
+      - ./scripts/init-mariadb.sql:/docker-entrypoint-initdb.d/init-mariadb.sql
 
   adminer:
     image: adminer
