@@ -2,16 +2,16 @@
   "name": "@platzily-admin/service-users",
   "version": "1.0.0",
   "description": "> TODO: description",
-  "author": "diego lozano <jferdi24@gmail.com>",
+  "author": "Diego Cruz <dacruzt@outlook.com>",
   "homepage": "https://github.com/platzily/platzily-admin#readme",
-  "license": "MIT",
-  "main": "src/index.js",
+  "license": "ISC",
+  "main": "dist/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
@@ -27,7 +27,6 @@
     "url": "https://github.com/platzily/platzily-admin/issues"
   },
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "service-db": "^1.0.0"
+    "@platzily-admin/mariadb-connection-module": "1.0.0"
   }
 }

@@ -5,13 +5,13 @@
   "author": "Diego Cruz <dacruzt@outlook.com>",
   "homepage": "https://github.com/platzily/platzily-admin#readme",
   "license": "MIT",
-  "main": "lib/mariadb-connection-module.js",
+  "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"

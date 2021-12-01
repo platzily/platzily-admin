@@ -1,15 +1,23 @@
-import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
+import { User, userModel, listUserDTO } from "../dto/user";
+import { dbConnection } from "mariadb-connection-module";
 
-@Entity()
-export class User {
+export const modelUser = (): userModel => {
+  return {
+    getAll,
+  };
+};
 
-  @ObjectIdColumn()
-  id: ObjectID;
-
-  @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
-
+async function getAll() {
+  let result: User = await dbConnection("users").returning([
+    "id",
+    "firstname",
+    "lastname",
+    "description",
+    "email",
+    "rol",
+    "image",
+    "is_active",
+    "reason",
+  ]);
+  return result;
 }
