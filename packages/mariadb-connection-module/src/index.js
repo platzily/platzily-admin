@@ -9,9 +9,6 @@ try {
   );
   if (!dbConnection) {
     dbConnection = knex(databaseConfig);
-    dbConnection("users").then((users) => {
-      console.log(users);
-    });
   }
 } catch (err) {
   logger.error(
@@ -19,5 +16,4 @@ try {
   );
   process.exit(1);
 }
-//module.exports = dbConnection;
-dbConnection;
+module.exports = dbConnection;
