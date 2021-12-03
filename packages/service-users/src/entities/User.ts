@@ -1,42 +1,13 @@
-// id: number;
-// firstname: string;
-// lastname: string;
-// description: string;
-// email: string;
-// rol: string;
-// image: string;
-// is_active: boolean;
-// reason: string;
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { userModel, User } from '../dto/user';
+const dbConnection = require("@platzily-admin/mariadb-connection-module");
 
-@Entity()
-export class User {
+export const modelUser = (): userModel => {
+  return {
+    getAll,
+  };
+};
 
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
-
-  @Column()
-  description: string;
-
-  @Column()
-  email: string;
-
-  @Column()
-  rol: string;
-
-  @Column()
-  image: string;
-
-  @Column()
-  reason: string;
-
-  @Column()
-  is_active: boolean;
-
+async function getAll() {
+  let result: User[] =  await dbConnection("users");
+  return result
 }

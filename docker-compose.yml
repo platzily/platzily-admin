@@ -14,8 +14,6 @@ services:
       - MONGODB_PASS=${MONGODB_PASS}
       - MONGO_INITDB_DATABASE=${MONGODB_INIT_DATABASE}
       - MONGODB_DATABASE=${MONGODB_DATABASE}
-    ports:
-      - "27017:27017"
     volumes:
       - ./scripts/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
 
@@ -29,14 +27,20 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
-  mariadb:
+  maria-db:
     image: mariadb
-    restart: always
-    ports:
-      - 3306:3306
+    container_name: maria_db
+    restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: example
-      MARIADB_DATABASE: test
+      - MARIADB_ROOT_PASSWORD=1234
+      - MARIADB_USER=user
+      - MARIADB_PASSWORD=1234
+      - MARIADB_DATABASE=test
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./scripts/init-mariadb.sql:/docker-entrypoint-initdb.d/init-mariadb.sql
 
   adminer:
     image: adminer
