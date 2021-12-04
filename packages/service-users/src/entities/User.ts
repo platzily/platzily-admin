@@ -1,15 +1,13 @@
-import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
+import { userModel, User } from '../dto/user';
+const dbConnection = require("@platzily-admin/mariadb-connection-module");
 
-@Entity()
-export class User {
+export const modelUser = (): userModel => {
+  return {
+    getAll,
+  };
+};
 
-  @ObjectIdColumn()
-  id: ObjectID;
-
-  @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
-
+async function getAll() {
+  let result: User[] =  await dbConnection("users");
+  return result
 }

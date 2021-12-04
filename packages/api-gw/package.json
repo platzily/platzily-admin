@@ -28,7 +28,8 @@
     "url": "https://github.com/platzily/platzily-admin/issues"
   },
   "dependencies": {
-    "fastify": "^3.23.1"
+    "fastify": "^3.23.1",
+    "@platzily-admin/service-campaigns": "1.0.0"
   },
   "devDependencies": {
     "nodemon": "2.0.15",
