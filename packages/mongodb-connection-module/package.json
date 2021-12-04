@@ -5,7 +5,7 @@
   "author": "Diego Cruz <dacruzt@outlook.com>",
   "homepage": "https://github.com/platzily/platzily-admin#readme",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "directories": {
     "src": "src",
     "test": "__tests__"
@@ -27,5 +27,8 @@
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.13",
     "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0"
   }
 }

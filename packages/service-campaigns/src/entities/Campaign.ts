@@ -1,30 +1,25 @@
-import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
-
-@Entity("campaign")
-export class Campaign {
-
-  @ObjectIdColumn()
-  id: ObjectID;
-
-  @Column()
+import { Schema } from 'mongoose';
+import { db } from "@platzily-admin/mongodb-connection-module";
+interface Campaign {
   name: string;
-
-  @Column()
   source: string;
-
-  @Column()
   medium: string;
-
-  @Column()
   tern: string;
-
-  @Column()
   content: string;
-
-  @Column({ type: 'timestamp' })
-  createdAt: Date
-
-  @Column({ type: 'timestamp', nullable: true })
-  updatedAt?: Date
-
+  active: boolean,
+  createdAt: Date;
+  updatedAt?: Date;
 }
+
+const CampaignSchema = new Schema<Campaign>({
+  name: { type: String, required: true },
+  source: { type: String, required: true },
+  medium: { type: String, required: true },
+  tern: { type: String },
+  content: { type: String },
+  active: { type: Boolean },
+}, { timestamps: true });
+
+CampaignSchema.index({ hash: 1 });
+
+export const CampaignModel = db.model<Campaign>('campaign', CampaignSchema);

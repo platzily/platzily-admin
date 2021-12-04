@@ -1,12 +1,9 @@
-const Mongoose = require("mongoose");
+import { createConnection } from "mongoose";
 
 const config = require("../config/database");
-const logger = require("./utils/logger");
-console.log(config.mongodb.uri);
-Mongoose.Promise = global.Promise;
+import { logger } from "./utils/logger";
 
-const db = Mongoose.createConnection(config.mongodb.uri, {
-  useNewUrlParser: true,
+export const db = createConnection(config.mongodb.uri, {
   auth: {
     username: config.mongodb.user,
     password: config.mongodb.pass,
@@ -40,5 +37,3 @@ process.on("SIGINT", () => {
     process.exit(1);
   });
 });
-
-module.exports = db;

@@ -1,11 +1,11 @@
 {
-  "name": "service-campaigns",
+  "name": "@platzily-admin/service-campaigns",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "diego lozano <jferdi24@gmail.com>",
   "homepage": "https://github.com/platzily/platzily-admin#readme",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "directories": {
     "lib": "src",
     "test": "__tests__"
@@ -24,6 +24,12 @@
     "url": "https://github.com/platzily/platzily-admin/issues"
   },
   "dependencies": {
-    "service-db": "^1.0.0"
+    "@platzily-admin/mongodb-connection-module": "^1.0.0",
+    "mongoose": "6.0.14",
+    "winston": "3.3.3"
+  },
+  "devDependencies": {
+    "faker": "5.5.3",
+    "ts-node": "10.4.0"
   }
 }

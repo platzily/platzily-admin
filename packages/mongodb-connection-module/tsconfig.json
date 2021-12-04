@@ -7,11 +7,10 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
     "target": "es6",
+    "esModuleInterop": true,
     "sourceMap": false,
     "outDir": "dist",
-    "strict": true,
     "lib": [
       "es6"
     ]
